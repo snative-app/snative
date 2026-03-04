@@ -1,0 +1,10 @@
+node_modules/
+.pnpm-store/
+
+.tmp-snative-*/
+
+*.tgz
+
+.DS_Store
+
+.internal/

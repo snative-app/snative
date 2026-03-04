@@ -1,0 +1,48 @@
+{
+  "name": "create-snative-app",
+  "version": "0.1.5",
+  "description": "Official create command for pnpm create snative-app.",
+  "type": "module",
+  "license": "MIT",
+  "author": "SNative",
+  "homepage": "https://www.npmjs.com/package/create-snative-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snative-dev/snative-template.git",
+    "directory": "packages/create-snative-app"
+  },
+  "bugs": {
+    "url": "https://github.com/snative-dev/snative-template/issues"
+  },
+  "keywords": [
+    "snative",
+    "create",
+    "svelte",
+    "capacitor",
+    "tauri",
+    "template"
+  ],
+  "bin": {
+    "create-snative-app": "bin/create-snative-app.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "node ./bin/create-snative-app.js --help",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm run pack:check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "snative-app": "workspace:^"
+  }
+}

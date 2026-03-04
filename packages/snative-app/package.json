@@ -1,0 +1,54 @@
+{
+  "name": "snative-app",
+  "version": "0.1.4",
+  "description": "CLI SNative para inicializar proyectos multiplataforma con wizard interactivo.",
+  "type": "module",
+  "license": "MIT",
+  "author": "SNative",
+  "homepage": "https://www.npmjs.com/package/snative-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snative-dev/snative-template.git",
+    "directory": "packages/snative-app"
+  },
+  "bugs": {
+    "url": "https://github.com/snative-dev/snative-template/issues"
+  },
+  "keywords": [
+    "snative",
+    "cli",
+    "capacitor",
+    "tauri",
+    "svelte",
+    "template",
+    "scaffold"
+  ],
+  "bin": {
+    "snative-app": "bin/snative-app.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./init": "./src/init.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "node ./bin/snative-app.js --help",
+    "pack:check": "npm pack --dry-run",
+    "scaffold:test": "node ./scripts/scaffold-test.js",
+    "prepublishOnly": "npm run pack:check"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "snative-template",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo del CLI y creador de proyectos SNative",
+  "packageManager": "pnpm@10.25.0",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "dev": "pnpm --filter snative-app dev",
+    "pack:check": "pnpm --filter snative-app pack:check && pnpm --filter create-snative-app pack:check",
+    "test:scaffold": "pnpm --filter snative-app scaffold:test",
+    "publish:all": "pnpm --filter snative-app publish --access public && pnpm --filter create-snative-app publish --access public"
+  }
+}
