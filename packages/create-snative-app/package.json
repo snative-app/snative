@@ -1,18 +1,18 @@
 {
   "name": "create-snative-app",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Official create command for pnpm create snative-app.",
   "type": "module",
   "license": "MIT",
   "author": "SNative",
-  "homepage": "https://www.npmjs.com/package/create-snative-app",
+  "homepage": "https://github.com/snative-app/snative/tree/main/packages/create-snative-app#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snative-dev/snative-template.git",
+    "url": "git+https://github.com/snative-app/snative.git",
     "directory": "packages/create-snative-app"
   },
   "bugs": {
-    "url": "https://github.com/snative-dev/snative-template/issues"
+    "url": "https://github.com/snative-app/snative/issues"
   },
   "keywords": [
     "snative",
