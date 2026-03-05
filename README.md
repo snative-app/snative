@@ -24,7 +24,7 @@ pnpm run pack:check
 pnpm run test:scaffold
 ```
 
-Then publish in this order:
+Manual publish order:
 
 ```bash
 pnpm --filter snative-app publish --access public
@@ -42,3 +42,25 @@ Version bump guide:
 # 4) pnpm run pack:check && pnpm run test:scaffold
 # 5) publish in order (snative-app, then create-snative-app)
 ```
+
+## Automated Publish (GitHub Actions + OIDC)
+
+This repository includes `.github/workflows/publish.yml` to publish on tags:
+
+- `snative-app-v*` publishes `snative-app`
+- `create-snative-app-v*` publishes `create-snative-app`
+
+Tag examples:
+
+```bash
+git tag -a snative-app-v0.1.5 -m "snative-app v0.1.5"
+git tag -a create-snative-app-v0.1.6 -m "create-snative-app v0.1.6"
+git push origin snative-app-v0.1.5 create-snative-app-v0.1.6
+```
+
+In npm package settings, configure Trusted Publishing for both packages:
+
+- Publisher: GitHub Actions
+- Organization/user: `snative-app`
+- Repository: `snative`
+- Workflow filename: `publish.yml`

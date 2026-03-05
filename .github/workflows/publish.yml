@@ -1,0 +1,60 @@
+name: Publish Packages
+
+on:
+  push:
+    tags:
+      - 'snative-app-v*'
+      - 'create-snative-app-v*'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish-snative-app:
+    if: startsWith(github.ref_name, 'snative-app-v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Publish snative-app
+        run: pnpm --filter snative-app publish --access public --provenance --no-git-checks
+
+  publish-create-snative-app:
+    if: startsWith(github.ref_name, 'create-snative-app-v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Publish create-snative-app
+        run: pnpm --filter create-snative-app publish --access public --provenance --no-git-checks
