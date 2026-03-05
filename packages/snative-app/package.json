@@ -38,6 +38,7 @@
   ],
   "scripts": {
     "dev": "node ./bin/snative-app.js --help",
+    "doctor": "node ./bin/snative-app.js doctor",
     "pack:check": "npm pack --dry-run",
     "scaffold:test": "node ./scripts/scaffold-test.js",
     "prepublishOnly": "npm run pack:check"

@@ -12,6 +12,7 @@ Internal workspace for SNative project scaffolding packages.
 ```bash
 pnpm install
 pnpm --filter snative-app dev
+pnpm --filter snative-app run doctor
 pnpm --filter create-snative-app dev
 pnpm --filter snative-app scaffold:test
 ```

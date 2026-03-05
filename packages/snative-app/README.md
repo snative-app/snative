@@ -23,6 +23,7 @@ snative-app init
 snative-app init my-app
 snative-app init my-app --yes --platforms=web,ios,android
 snative-app init my-app --yes --name "Acme Portal" --platforms web,macos
+snative-app doctor
 ```
 
 ## CLI Options
@@ -33,6 +34,11 @@ snative-app init my-app --yes --name "Acme Portal" --platforms web,macos
 - `--name <project-name>`
 - `--platforms=web,ios,android,macos,windows,linux`
 - `--platforms web,ios,android,macos,windows,linux`
+
+Doctor:
+
+- `snative-app doctor`
+- `snative-app doctor --strict`
 
 ## Generated Project Model
 
@@ -67,4 +73,18 @@ If desktop targets were selected:
 ```bash
 pnpm desktop:dev
 pnpm desktop:build
+```
+
+## Environment Doctor
+
+Run environment diagnostics before scaffolding or CI setup:
+
+```bash
+snative-app doctor
+```
+
+Use strict mode if warnings should fail CI:
+
+```bash
+snative-app doctor --strict
 ```

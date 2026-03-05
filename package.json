@@ -7,6 +7,7 @@
   "scripts": {
     "build": "echo 'No build step required'",
     "dev": "pnpm --filter snative-app dev",
+    "doctor": "pnpm --filter snative-app run doctor",
     "pack:check": "pnpm --filter snative-app pack:check && pnpm --filter create-snative-app pack:check",
     "test:scaffold": "pnpm --filter snative-app scaffold:test",
     "publish:all": "pnpm --filter snative-app publish --access public && pnpm --filter create-snative-app publish --access public"
