@@ -31,6 +31,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Publish snative-app
+        env:
+          NODE_AUTH_TOKEN: ''
+          NPM_TOKEN: ''
         run: pnpm --filter snative-app publish --access public --provenance --no-git-checks
 
   publish-create-snative-app:
@@ -53,4 +56,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Publish create-snative-app
+        env:
+          NODE_AUTH_TOKEN: ''
+          NPM_TOKEN: ''
         run: pnpm --filter create-snative-app publish --access public --provenance --no-git-checks
